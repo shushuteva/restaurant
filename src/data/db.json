@@ -1,0 +1,269 @@
+{
+  "users": [
+    {
+      "id": "e6fe",
+      "name": "Георги Георгиев",
+      "email": "gosho@abv.bg",
+      "password": "12345Wa!",
+      "phone": "+35988323143"
+    },
+    {
+      "id": "91dd",
+      "name": "Пешо Пешев",
+      "email": "pesho@abv.bg",
+      "password": "12345wA!",
+      "phone": "+359877632103"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "Пицария Рома",
+      "cuisine": "Италианска кухня",
+      "rating": 4.6,
+      "location": "София",
+      "deliveryTime": "30 мин",
+      "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+    },
+    {
+      "id": "2",
+      "name": "Китайска звезда",
+      "cuisine": "Китайска кухня",
+      "rating": 4.3,
+      "location": "Пловдив",
+      "deliveryTime": "40 мин",
+      "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90"
+    },
+    {
+      "id": "3",
+      "name": "Баба Готви",
+      "cuisine": "Българска кухня",
+      "rating": 4.8,
+      "location": "Варна",
+      "deliveryTime": "25 мин",
+      "image": "/images/balkan.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Златен Дракон",
+      "cuisine": "Китайска кухня",
+      "rating": 4.1,
+      "location": "Стара Загора",
+      "deliveryTime": "35 мин",
+      "image": "/images/chinese.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Тоскано",
+      "cuisine": "Италианска кухня",
+      "rating": 4.7,
+      "location": "Бургас",
+      "deliveryTime": "30 мин",
+      "image": "/images/italian.jpg"
+    }
+  ],
+  "dishes": [
+    {
+      "id": "d1",
+      "restaurantId": "1",
+      "name": "Пица Маргарита",
+      "price": 12.99,
+      "image": "https://images.unsplash.com/photo-1601924638867-3ec4c8c8d8ff"
+    },
+    {
+      "id": "d2",
+      "restaurantId": "1",
+      "name": "Паста Карбонара",
+      "price": 14.99,
+      "image": "https://images.unsplash.com/photo-1589308078051-dc2a3f1a2b0c"
+    },
+    {
+      "id": "d3",
+      "restaurantId": "2",
+      "name": "Пиле със сусам",
+      "price": 11.5,
+      "image": "https://images.unsplash.com/photo-1604908554169-f7aa3d1dbbff"
+    }
+  ],
+  "orders": [
+    {
+      "id": "9587",
+      "userId": "e6fe",
+      "items": [
+        {
+          "id": "d1",
+          "restaurantId": "1",
+          "name": "Пица Маргарита",
+          "price": 12.99,
+          "image": "https://images.unsplash.com/photo-1601924638867-3ec4c8c8d8ff"
+        },
+        {
+          "id": "d2",
+          "restaurantId": "1",
+          "name": "Паста Карбонара",
+          "price": 14.99,
+          "image": "https://images.unsplash.com/photo-1589308078051-dc2a3f1a2b0c"
+        }
+      ],
+      "total": "27.98",
+      "paymentMethod": "borica",
+      "status": "pending"
+    },
+    {
+      "id": "dffe",
+      "userId": "e6fe",
+      "items": [
+        {
+          "id": "d1",
+          "restaurantId": "1",
+          "name": "Пица Маргарита",
+          "price": 12.99,
+          "image": "https://images.unsplash.com/photo-1601924638867-3ec4c8c8d8ff"
+        },
+        {
+          "id": "d2",
+          "restaurantId": "1",
+          "name": "Паста Карбонара",
+          "price": 14.99,
+          "image": "https://images.unsplash.com/photo-1589308078051-dc2a3f1a2b0c"
+        }
+      ],
+      "total": "27.98",
+      "paymentMethod": "paypal",
+      "status": "pending"
+    },
+    {
+      "id": "b344",
+      "userId": "e6fe",
+      "items": [
+        {
+          "id": "d1",
+          "restaurantId": "1",
+          "name": "Пица Маргарита",
+          "price": 12.99,
+          "image": "https://images.unsplash.com/photo-1601924638867-3ec4c8c8d8ff"
+        }
+      ],
+      "total": "12.99",
+      "paymentMethod": "borica",
+      "status": "pending"
+    },
+    {
+      "id": "a21a",
+      "userId": "e6fe",
+      "items": [
+        {
+          "id": "d1",
+          "restaurantId": "1",
+          "name": "Пица Маргарита",
+          "price": 12.99,
+          "image": "https://images.unsplash.com/photo-1601924638867-3ec4c8c8d8ff"
+        }
+      ],
+      "total": "12.99",
+      "paymentMethod": "paypal",
+      "status": "pending"
+    },
+    {
+      "id": "a123",
+      "userId": "e6fe",
+      "items": [
+        {
+          "id": "d3",
+          "restaurantId": "2",
+          "name": "Пиле със сусам",
+          "price": 11.5,
+          "image": "https://images.unsplash.com/photo-1604908554169-f7aa3d1dbbff"
+        }
+      ],
+      "total": "11.50",
+      "paymentMethod": "borica",
+      "status": "pending"
+    },
+    {
+      "id": "7248",
+      "userId": "e6fe",
+      "items": [
+        {
+          "id": "d2",
+          "restaurantId": "1",
+          "name": "Паста Карбонара",
+          "price": 14.99,
+          "image": "https://images.unsplash.com/photo-1589308078051-dc2a3f1a2b0c"
+        }
+      ],
+      "total": "14.99",
+      "paymentMethod": "borica",
+      "status": "pending"
+    },
+    {
+      "id": "c640",
+      "userId": "e6fe",
+      "items": [
+        {
+          "id": "d1",
+          "restaurantId": "1",
+          "name": "Пица Маргарита",
+          "price": 12.99,
+          "image": "https://images.unsplash.com/photo-1601924638867-3ec4c8c8d8ff"
+        }
+      ],
+      "total": "12.99",
+      "paymentMethod": "paypal",
+      "status": "pending"
+    },
+    {
+      "id": "2468",
+      "userId": "e6fe",
+      "restaurantId": 2,
+      "items": [
+        {
+          "id": "d3",
+          "restaurantId": "2",
+          "name": "Пиле със сусам",
+          "price": 11.5,
+          "image": "https://images.unsplash.com/photo-1604908554169-f7aa3d1dbbff"
+        }
+      ],
+      "total": "11.50",
+      "paymentMethod": "paypal",
+      "status": "delivered"
+    },
+    {
+      "id": "a406",
+      "userId": "91dd",
+      "restaurantId": 2,
+      "items": [
+        {
+          "id": "d3",
+          "restaurantId": "2",
+          "name": "Пиле със сусам",
+          "price": 11.5,
+          "image": "https://images.unsplash.com/photo-1604908554169-f7aa3d1dbbff"
+        }
+      ],
+      "total": "11.50",
+      "paymentMethod": "borica",
+      "status": "pending"
+    }
+  ],
+  "couriers": [],
+  "feedback": [
+    {
+      "id": "548b",
+      "userId": "e6fe",
+      "restaurantId": 2,
+      "rating": 3,
+      "comment": "Можеше и по-добре да е",
+      "date": "2025-05-27T14:13:19.821Z"
+    },
+    {
+      "id": "1815",
+      "userId": "e6fe",
+      "restaurantId": 2,
+      "rating": 1,
+      "comment": "Стига им толкова",
+      "date": "2025-05-27T14:44:43.222Z"
+    }
+  ]
+}
