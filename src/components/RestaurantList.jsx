@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react'
+import  List_data from '../data/db.json';
 import { mockRestaurants } from "../data/mockRestaurants";
 import { Link } from 'react-router-dom';
 
@@ -22,7 +23,13 @@ export default function RestaurantList(){
         setFiltered(data);
       });
     }, [])
-
+     /* useEffect(() => {
+        
+     
+        setRestaurants(List_data.restaurants);
+        setFiltered(List_data.restaurants);
+      
+    }, [])*/
     const applyFilters = () => {
         let result = [...restaurants];
 
