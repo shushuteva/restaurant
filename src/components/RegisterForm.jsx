@@ -10,7 +10,7 @@ export default function RegisterForm() {
         const nameRegex = /^[А-Я][а-я]+\s[А-Я][а-я]+$/;
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,}$/;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/;
-        const phoneRegex = /^(08|\+3598)[0-9]{7,8}$/;
+        /*const phoneRegex = /^(08|\+3598)[0-9]{7,8}$/;*/ const phoneRegex =/^(08[0-9]{8})|(\+3598[0-9]{7})$/
 
         if (!nameRegex.test(formData.name)) return "Името трябва да е на кирилица и с главни букви.";
         if (!emailRegex.test(formData.email)) return "Невалиден имейл.";
@@ -28,7 +28,7 @@ export default function RegisterForm() {
             alert(error);
         }
         else{
-            fetch('http://localhost:3001/users', {
+            fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +48,15 @@ export default function RegisterForm() {
 
 
     return(
-        <div className="card mx-auto p-5" style={{width: '18rem'}}>
+        <div
+            className="card mx-auto p-5"
+            style={{
+                width: '18rem',
+                background: 'transparent',
+                boxShadow: 'none',
+                border: 'none'
+            }}
+        >
             <form onSubmit={handleSubmit} method='post'>
                 <h2 className='card-title'>Регистрация</h2>
                 <label>Име и фамилия:</label>
@@ -63,5 +71,4 @@ export default function RegisterForm() {
             </form>
         </div>
     )
-
 }
