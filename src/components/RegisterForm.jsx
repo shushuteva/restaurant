@@ -48,7 +48,15 @@ export default function RegisterForm() {
 
 
     return(
-        <div className="card mx-auto p-5" style={{width: '18rem'}}>
+        <div
+            className="card mx-auto p-5"
+            style={{
+                width: '18rem',
+                background: 'transparent',
+                boxShadow: 'none',
+                border: 'none'
+            }}
+        >
             <form onSubmit={handleSubmit} method='post'>
                 <h2 className='card-title'>Регистрация</h2>
                 <label>Име и фамилия:</label>
@@ -63,5 +71,4 @@ export default function RegisterForm() {
             </form>
         </div>
     )
-
 }

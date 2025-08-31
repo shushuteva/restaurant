@@ -47,7 +47,7 @@ export default function LoginForm({ setUser }){
 
 
     return(
-        <div className='card mx-auto p-5' style={{width: "18rem"}}>
+        <div className='card mx-auto p-5' style={{width: "18rem", background: "transparent", boxShadow: "none", border: "none"}}>
             {message && <div className="alert alert-info">{message}</div>}
             <form onSubmit={handleSubmit} action="post">
                 <h2 className='card-title'>Вход</h2>
@@ -58,6 +58,5 @@ export default function LoginForm({ setUser }){
                 <button type="submit" className='btn btn-success m-5'>Вход</button>
             </form>
         </div>
-        
     )
 }
