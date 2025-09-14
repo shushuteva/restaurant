@@ -2,3 +2,4 @@ node_modules/**
 .vs/
 appsettings.json
 restaurantBE/restaurantBE/bin
+restaurantBE/restaurantBE/obj/
