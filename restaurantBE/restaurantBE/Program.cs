@@ -1,6 +1,11 @@
 
+
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using restaurantBE.Data;
+using restaurantBE.Services;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 namespace restaurantBE
 {
@@ -11,6 +16,27 @@ namespace restaurantBE
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<PasswordService>();
+            builder.Services.AddScoped<JwtService>();
+
+            builder.Services.AddSwaggerGen();
+
+            var jwtKey = builder.Configuration["Jwt:Key"];
+            var key = Encoding.UTF8.GetBytes(jwtKey);
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(options =>
+                    {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                            ValidAudience = builder.Configuration["Jwt:Audience"],
+                            IssuerSigningKey = new SymmetricSecurityKey(key)
+                        };
+                    });
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -25,10 +51,13 @@ namespace restaurantBE
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
