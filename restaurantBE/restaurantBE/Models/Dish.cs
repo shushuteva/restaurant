@@ -12,6 +12,11 @@ namespace restaurantBE.Models
         public required string Image { get; set; }
 
         public required decimal Price { get; set; }
-        
+
+        public int RestaurantId { get; set; }
+
+        [JsonIgnore]
+        public Restaurant Restaurant { get; set; }
+
     }
 }
