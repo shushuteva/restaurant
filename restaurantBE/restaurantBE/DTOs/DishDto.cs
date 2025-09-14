@@ -8,5 +8,7 @@
         public required string Image { get; set; }
 
         public required decimal Price { get; set; }
+
+        public int RestaurantId { get; set; }
     }
 }
