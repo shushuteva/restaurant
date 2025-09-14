@@ -17,6 +17,7 @@ namespace restaurantBE.Models
 
         public ICollection<Dish> Dishes { get; set; } = new List<Dish>();
         public ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
 
     }
 }
