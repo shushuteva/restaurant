@@ -18,5 +18,10 @@ namespace restaurantBE.Models
         [JsonIgnore]
         public Restaurant Restaurant { get; set; }
 
+        public int? OrderId { get; set; }
+
+        [JsonIgnore]
+        public Order? Order { get; set; }
+
     }
 }
