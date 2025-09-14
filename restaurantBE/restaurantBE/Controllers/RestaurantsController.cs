@@ -93,6 +93,41 @@ namespace restaurantBE.Controllers
             return Ok(dish);
         }
 
+        [HttpPost("{id}/reviews")]
+        public async Task<IActionResult> AddReview(int id, [FromBody] ReviewDto reviewDto)
+        {
+            var restaurant = await _context.Restaurants.FindAsync(id);
+            if (restaurant == null)
+            {
+                return NotFound($"Restaurant with ID {id} not found.");
+            }
+
+            var review = new Review
+            {
+                Title = reviewDto.Title,
+                Text = reviewDto.Text,
+                RestaurantId = id
+            };
+
+            _context.Reviews.Add(review);
+            await _context.SaveChangesAsync();
+
+            return Ok(review);
+        }
+
+        [HttpGet("{id}/reviews")]
+        public async Task<IActionResult> getReviews(int id, [FromBody] ReviewDto reviewDto)
+        {
+            var restaurant = await _context.Restaurants.FindAsync(id);
+            if (restaurant == null)
+            {
+                return NotFound($"Restaurant with ID {id} not found.");
+            }
+
+            var reviews=restaurant.Reviews;
+            
+            return Ok(reviews);
+        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Restaurant updatedRestaurant)
