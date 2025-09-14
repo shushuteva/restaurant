@@ -1,7 +1,0 @@
-C:\Users\vikim\source\repos\restaurantBE\obj\Debug\net5.0\restaurantBE.csproj.AssemblyReference.cache
-C:\Users\vikim\source\repos\restaurantBE\obj\Debug\net5.0\restaurantBE.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\vikim\source\repos\restaurantBE\obj\Debug\net5.0\restaurantBE.AssemblyInfoInputs.cache
-C:\Users\vikim\source\repos\restaurantBE\obj\Debug\net5.0\restaurantBE.AssemblyInfo.cs
-C:\Users\vikim\source\repos\restaurantBE\obj\Debug\net5.0\restaurantBE.csproj.CoreCompileInputs.cache
-C:\Users\vikim\source\repos\restaurantBE\obj\Debug\net5.0\restaurantBE.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\vikim\source\repos\restaurantBE\obj\Debug\net5.0\restaurantBE.MvcApplicationPartsAssemblyInfo.cache
