@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react'
 import  List_data from '../data/db.json';
 import { mockRestaurants } from "../data/mockRestaurants";
 import { Link } from 'react-router-dom';
+import * as restaurantService from '../services/restaurantService';
 
 export default function RestaurantList(){
 
@@ -16,13 +17,25 @@ export default function RestaurantList(){
 
 
     useEffect(() => {
-        fetch('http://localhost:3001/restaurants')
-        .then(res => res.json())
-        .then(data => {
-        setRestaurants(data);
-        setFiltered(data);
-      });
-    }, [])
+    const fetchData = async () => {
+      try {
+        const [res1, res2] = await Promise.all([
+          fetch('http://localhost:3001/restaurants').then(res => res.json()),
+          restaurantService.fetchRestaurants().then(res => res),
+        ]);
+
+        const combinedData = [...res1, ...res2];
+
+        setRestaurants(combinedData);
+        setFiltered(combinedData);
+
+      } catch (error) {
+        console.error('Error fetching restaurants:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
      /* useEffect(() => {
         
      
