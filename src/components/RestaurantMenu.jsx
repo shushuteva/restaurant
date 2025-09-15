@@ -2,6 +2,7 @@ import React, { useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
 import { addToCart } from "../utils/cart";
 import { useNavigate } from "react-router-dom";
+import * as dishService from '../services/dishService';
 
 export default function RestaurantMenu(){
     const { id } = useParams();
@@ -9,9 +10,14 @@ export default function RestaurantMenu(){
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:3001/dishes?restaurantId=${id}`)
-        .then(res => res.json())
+        fetch(`http://localhost:3001/restaurants/${id}/menu`)
+        .then(res =>{
+          console.log(123);
+          res.json()})
         .then(data => setDishes(data));
+        // dishService.fetchDishes()
+        // .then(data => setDishes(data))
+        // .catch(err => console.error(err));
     }, [id]);
 
     const handleAdd = (dish) => {
