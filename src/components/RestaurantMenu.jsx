@@ -10,14 +10,23 @@ export default function RestaurantMenu(){
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:3001/restaurants/${id}/menu`)
-        .then(res =>{
-          console.log(123);
-          res.json()})
-        .then(data => setDishes(data));
-        // dishService.fetchDishes()
-        // .then(data => setDishes(data))
-        // .catch(err => console.error(err));
+          const fetchData = async () => {
+              try {
+                const [res1, res2] = await Promise.all([
+                  fetch(`http://localhost:3001/restaurants/${id}/menu`).then(res => res.json()),
+                  dishService.fetchDishes().then(res => res),
+                ]);
+        
+                const combinedData = [...res1, ...res2];
+        
+                setDishes(combinedData);
+        
+              } catch (error) {
+                console.error('Error fetching dishes:', error);
+              }
+            }
+
+            fetchData();
     }, [id]);
 
     const handleAdd = (dish) => {

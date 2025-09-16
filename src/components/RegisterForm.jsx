@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { register } from '../services/authService';
 
 
 export default function RegisterForm() {
@@ -28,24 +29,30 @@ export default function RegisterForm() {
             alert(error);
         }
         else{
-            fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
+            register(formData.name,formData.email,formData.password)
+            .then(x=>{
+                console.log(x);
             })
-            .then(res => {
-                if (res.ok) {
-                    alert('Успешна регистрация!');
-                } else {
-                    alert('Грешка при регистрацията.');
-                }
-            })
-            .catch(() => alert('Сървърна грешка.'));
-                }
-    }
 
+
+            // fetch('http://localhost:3000/users', {
+            // method: 'POST',
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
+            // body: JSON.stringify(formData)
+            // })
+            // .then(res => {
+            //     if (res.ok) {
+            //         alert('Успешна регистрация!');
+            //     } else {
+            //         alert('Грешка при регистрацията.');
+            //     }
+            // })
+            // .catch(() => alert('Сървърна грешка.'));
+            //     }
+        }
+    }
 
     return(
         <div

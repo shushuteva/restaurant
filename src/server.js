@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const { log } = require('console');
 
 const app = express();
 const PORT = 3001;
@@ -99,10 +100,8 @@ app.get('/restaurants', (req, res) => {
 
 // RESTAURANT MENU
 app.get('/restaurants/:id/menu', (req, res) => {
-  console.log('Fetching menu for restaurant ID:', req.params.id);
   const db = readDB();
   const dishes = db.dishes.filter(d => String(d.restaurantId) === req.params.id);
-  console.log('Dishes found:', dishes);
   if (!dishes) return res.status(404).json({ error: 'Restaurant not found.' });
   res.json(dishes || []);
 });
